@@ -8,20 +8,29 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_article():
-	pass
+def add_article(url,name,topic,rating):
+    new_artical = Knowledge(url = url, name=name,topic=topic, rating=rating)
+    session.add(new_artical)
+    session.commit()
+
+    #   art_title = art_title,
+    #   wiki_link = wiki_link,
+    #   rating = rating)
+    #session.add(article_object)
+    #session.commit()
+add_article("www.google.com", "poteto", "food",3)
 
 def query_all_articles():
-	pass
+        
 
 def query_article_by_topic():
-	pass
+
 
 def delete_article_by_topic():
-	pass
+
 
 def delete_all_articles():
-	pass
+
 
 def edit_article_rating():
-	pass
+      
